@@ -1,0 +1,339 @@
+{% load static %} <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>大数据分析课程项目</title>
+  
+  <link rel="icon" type="imge/x-icon" href="{% static "img/xia.ico"%}"/>
+
+  <!-- Custom fonts for this template-->
+  <link href="{% static "vendor/fontawesome-free/css/all.min.css"%}" rel="stylesheet" type="text/css">
+
+  <!-- Page level plugin CSS-->
+  <link href="{% static "vendor/datatables/dataTables.bootstrap4.css"%}" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="{% static "css/sb-admin.css"%}" rel="stylesheet">
+</head>
+
+<body id="page-top">
+
+  <!--彩色bar-->
+  <nav class="navbar navbar-expand navbar-dark bg-colorful static-top">
+
+    <!-- <a class="navbar-brand mr-1" href="{% url "main_index"%}">虾米队</a>-->
+     <a class="navbar-brand mr-1" href="{% url "main_index"%}">
+      <img src="xia.png" alt="logo" style="width:40px;">
+      虾米队
+    </a>
+
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <ul class="navbar-nav">
+    <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          项目
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="{% url "p0_index"%}">游戏日志分析</a>
+<a class="dropdown-item" href="{% url "p1_index"%}">Pronto共享单车数据分析</a>
+          <!--<a class="dropdown-item" href="project3index.html">各品牌口红数据分析</a>-->
+        </div>
+      </li>
+    </ul>
+
+    <!-- Navbar Search -->
+    <!--<form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>-->
+
+    <!-- Navbar -->
+    <ul class="navbar-nav ml-auto mr-md-0">
+      <li class="nav-item dropdown no-arrow mx-1">
+        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-bell fa-fw"></i>
+          <span class="badge badge-danger"></span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown no-arrow mx-1">
+        <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-envelope fa-fw"></i>
+          <span class="badge badge-danger"></span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown no-arrow">
+        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user-circle fa-fw"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+          <a class="dropdown-item" href="#">Settings</a>
+          <a class="dropdown-item" href="#">Activity Log</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+        </div>
+      </li>
+    </ul>
+
+  </nav>
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="sidebar navbar-nav bg-colorful1">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url "p0_index"%}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>项目介绍</span>
+        </a>
+      </li>
+    
+     <li class="nav-item">
+        <a class="nav-link" href="{% url "p0n1"%}">
+          <i class="fas fa-chart-bar"></i>
+          <span>Top20玩家游戏时长</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url "p0n2"%}">
+          <i class="fas fa-chart-line"></i>
+          <span>每日用户留存率</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url "p0n3"%}">
+          <i class="fas fa-chart-pie"></i>
+          <span>前两日新老用户</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url "p0n4"%}">
+          <i class="fas fa-chart-pie"></i>
+          <span>玩家手机系统占比</span></a>
+      </li>
+    </li>
+    </ul>
+
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+
+        <!-- DataTables Example -->
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-chart-line"></i>
+            七日数据展示</div>
+          <div class="card-body">
+            <div id="container" style="height: 500px"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>     
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+app.title = '七日数据展示';
+
+var colors = ['#5793f3', '#d14a61', '#675bba'];
+
+option = {
+    color: colors,
+
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross'
+        }
+    },
+    grid: {
+        right: '20%'
+    },
+    toolbox: {
+        feature: {
+            dataView: {show: true, readOnly: false},
+            restore: {show: true},
+            saveAsImage: {show: true}
+        }
+    },
+    legend: {
+        data:['登陆用户数','新用户数','用户留存率']
+    },
+    xAxis: [
+        {
+            type: 'category',
+            axisTick: {
+                alignWithLabel: true
+            },
+            data: ['1','2','3','4','5','6','7']
+        }
+    ],
+    yAxis: [
+        {
+            type: 'value',
+            name: '登陆用户数',
+            min: 0,
+            max: 30000,
+            position: 'right',
+            axisLine: {
+                lineStyle: {
+                    color: colors[0]
+                }
+            },
+            axisLabel: {
+                formatter: '{value} 人'
+            }
+        },
+        {
+            type: 'value',
+            name: '新用户数',
+            min: 0,
+            max: 30000,
+            position: 'right',
+            offset: 80,
+            axisLine: {
+                lineStyle: {
+                    color: colors[1]
+                }
+            },
+            axisLabel: {
+                formatter: '{value} 人'
+            }
+        },
+        {
+            type: 'value',
+            name: '用户留存率',
+            min: 0,
+            max: 100,
+            position: 'left',
+            axisLine: {
+                lineStyle: {
+                    color: colors[2]
+                }
+            },
+            axisLabel: {
+                formatter: '{value} %'
+            }
+        }
+    ],
+    series: [
+        {
+            name:'登陆用户数',
+            type:'bar',
+            data:[11076,13930,15394,16371,20144,26159,24763]
+        },
+        {
+            name:'新用户数',
+            type:'bar',
+            yAxisIndex: 1,
+            data:[11076,5835,3020,1841,5334,6524,1805]
+        },
+        {
+            name:'用户留存率',
+            type:'line',
+            yAxisIndex: 2,
+            data:['',57,46,25,68,86,35]
+        }
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+          </div>
+          <div class="card-footer text-muted"><center>登录人数基本每天增加，但是新用户数基本呈下降趋势<br />用户留存率波动很大，不考虑外部因素，说明游戏有亮点，但是还不够吸引玩家长久登录<br />游戏商应该考虑调整游戏的策略，如宣传、开服福利等吸引玩家</center></div>
+        </div>
+
+      </div>
+      <!-- /.container-fluid -->
+
+      <!-- Sticky Footer -->
+      <footer class="sticky-footer">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright © XiaMi 2019</span>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+    <!-- /.content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="{% static "vendor/jquery/jquery.min.js"%}"></script>
+  <script src="{% static "vendor/bootstrap/js/bootstrap.bundle.min.js"%}"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="{% static "vendor/jquery-easing/jquery.easing.min.js"%}"></script>
+
+  <!-- Page level plugin JavaScript-->
+  <script src="{% static "vendor/chart.js/Chart.min.js"%}"></script>
+  <script src="{% static "vendor/datatables/jquery.dataTables.js"%}"></script>
+  <script src="{% static "vendor/datatables/dataTables.bootstrap4.js"%}"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="{% static "js/sb-admin.min.js"%}"></script>
+
+  <!-- Demo scripts for this page-->
+  <script src="{% static "js/demo/datatables-demo.js"%}"></script>
+  <script src="{% static "js/demo/chart-area-demo.js"%}"></script>
+
+</body>
+
+</html>

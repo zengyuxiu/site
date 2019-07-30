@@ -24,7 +24,7 @@ SECRET_KEY = ')px26@fdsz)oi=n0_d)(c!4b43v_)n8lagda0^knf5v#sr9$4m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'Index',
     'project0',
     'project1',
+    'project2',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -83,10 +84,11 @@ WSGI_APPLICATION = 'Site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': '127.17.0.1',
+        #'HOST': '127.17.0.1',
+        'HOST': '192.168.1.157',
         'POST': 3306,
-        #'NAME': 'hive',
-        'NAME': 'django_mysql',
+        'NAME': 'hive',
+        #'NAME': 'django_mysql',
         'USER': 'root',
         'PASSWORD': 'root',
     }

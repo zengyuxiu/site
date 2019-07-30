@@ -47,7 +47,7 @@
         <div class="dropdown-menu">
                    <a class="dropdown-item" href="{% url "p0_index"%}">游戏日志分析</a>
           <a class="dropdown-item" href="{% url "p1_index"%}">Pronto共享单车数据分析</a>
-          <!--<a class="dropdown-item" href="project3index.html">各品牌口红数据分析</a>-->
+          <a class="dropdown-item" href="{% url "p2_index" %}">各品牌口红数据分析</a>
         </div>
       </li>
     </ul>
@@ -107,14 +107,14 @@
 
   <!--自动轮播图片-->
   <div id="demo" class="carousel slide" data-ride="carousel" data-interval="2000">
- 
+
       <!-- 指示符 -->
       <ul class="carousel-indicators">
         <li data-target="#demo" data-slide-to="0" class="active"></li>
         <li data-target="#demo" data-slide-to="1"></li>
         <li data-target="#demo" data-slide-to="2"></li>
       </ul>
- 
+
       <!-- 轮播图片 -->
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -127,7 +127,7 @@
           <img src="{% static "lipstick.jpg"%}" style="width: 100%">
         </div>
       </div>
- 
+
       <!-- 左右切换按钮 -->
       <a class="carousel-control-prev" href="#demo" data-slide="prev">
         <span class="carousel-control-prev-icon"></span>
@@ -135,7 +135,7 @@
       <a class="carousel-control-next" href="#demo" data-slide="next">
         <span class="carousel-control-next-icon"></span>
       </a>
- 
+
   </div>
 
   <div id="wrapper">
@@ -149,7 +149,7 @@
           <span>项目的果实</span>
         </a>
       </li>
-    
+
       <li class="nav-item">
         <a class="nav-link" href="{% url 'Charts' %}">
           <i class="fas fa-bicycle"></i>
@@ -208,7 +208,7 @@
               </a>
             </div>
           </div>
-          <!--<div class="col-xl-3 col-sm-6 mb-3">
+          <div class="col-xl-3 col-sm-6 mb-3">
             <div class="card text-white bg-colorful5 o-hidden h-100">
               <div class="card-body">
                 <div class="card-body-icon">
@@ -216,14 +216,14 @@
                 </div>
                 <div class="mr-5">口红销售数据分析</div>
               </div>
-              <a class="card-footer text-white clearfix small z-1" href="project3index.html">
+              <a class="card-footer text-white clearfix small z-1" href="{% url "p2_index" %}">
                 <span class="float-left">View Details</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
                 </span>
               </a>
             </div>
-          </div>-->
+          </div>
           <div class="col-xl-3 col-sm-6 mb-3">
             <div class="card text-white bg-colorful6 o-hidden h-100">
               <div class="card-body">
@@ -240,22 +240,7 @@
               </a>
             </div>
           </div>
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-colorful5 o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-shopping-cart"></i>
-                </div>
-                <div class="mr-5">待上线项目</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="project3index.html">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
+
 
 
 
@@ -276,7 +261,7 @@
             <i class="fas fa-table"></i>
             Data Table Example</div>
           <div class="card-body">
-            
+
           </div>
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>

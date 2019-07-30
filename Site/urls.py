@@ -19,4 +19,5 @@ urlpatterns = [
     path('',include('Index.urls')),
     path('p0/', include('project0.urls')),
     path('p1/', include('project1.urls')),
+    path('p2/', include('project2.urls')),
 ]
